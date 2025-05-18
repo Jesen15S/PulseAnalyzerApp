@@ -18,7 +18,7 @@ A modern, cross-platform pulse analysis tool built with Python and PyQt6.
 1. **Download the latest release**
    - Go to the [Releases](https://github.com/yourusername/PulseAnalyzerApp/releases) page and download the file named `pulse_analyzer_app` (or similar).
 
-2. **Make the file executable**
+2. **Make the file executable (only needed once)**
    - chmod +x pulse_analyzer_app
 
 3. **Run the application**
