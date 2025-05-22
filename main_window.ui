@@ -6,236 +6,374 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>976</width>
-    <height>705</height>
+    <width>1200</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Pulse Analyzer</string>
+   <string>Pulse Analyzer Pro</string>
   </property>
-  <property name="layoutDirection">
-   <enum>Qt::LayoutDirection::LeftToRight</enum>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <property name="layoutDirection">
-    <enum>Qt::LayoutDirection::LeftToRight</enum>
-   </property>
-   <widget class="QWidget" name="centralWidgetContainer" native="true">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>10</y>
-      <width>961</width>
-      <height>641</height>
-     </rect>
+  <widget class="QWidget" name="centralWidgetContainer">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="leftMargin">
+     <number>0</number>
     </property>
-    <widget class="QWidget" name="horizontalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>961</width>
-       <height>641</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QWidget" name="controlsPanelWidget" native="true">
-        <property name="maximumSize">
-         <size>
-          <width>350</width>
-          <height>16777215</height>
-         </size>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QSplitter" name="mainSplitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="handleWidth">
+       <number>3</number>
+      </property>
+      <widget class="QFrame" name="controls_container">
+       <property name="minimumSize">
+        <size>
+         <width>50</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>350</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>6</number>
         </property>
-        <widget class="QWidget" name="verticalLayoutWidget">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>331</width>
-           <height>611</height>
-          </rect>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="leftMargin">
+         <number>5</number>
+        </property>
+        <property name="topMargin">
+         <number>5</number>
+        </property>
+        <property name="rightMargin">
+         <number>5</number>
+        </property>
+        <property name="bottomMargin">
+         <number>5</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="toggle_sidebar_btn">
+          <property name="text">
+           <string>&lt;&lt;</string>
+          </property>
+          <property name="toolTip">
+            <string>Toggle Controls Panel</string>
+          </property>
+          <property name="maximumSize">
+            <size>
+              <width>30</width>
+              <height>16777215</height>
+            </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="header_title">
+          <property name="text">
+           <string>Controls</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="separator_frame">
+          <property name="frameShape">
+           <enum>QFrame::HLine</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Sunken</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_ref_file">
+          <property name="text">
+           <string>Reference: Not loaded</string>
+          </property>
+          <property name="wordWrap">
+            <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_load_ref">
+          <property name="text">
+           <string>Load Reference Signal</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Reference Column Name (Optional):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txt_ref_col"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="lbl_readings_file">
+          <property name="text">
+           <string>Readings: Not loaded</string>
+          </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_load_readings">
+          <property name="text">
+           <string>Load Readings Signal</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Readings Column Name (Optional):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txt_readings_col"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Time Column Name (Optional):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txt_time_col"/>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="chk_use_first_col">
+          <property name="text">
+           <string>Use First Non-Time Column If Name Not Found</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="similarity_method_label">
+          <property name="text">
+           <string>Similarity Method:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Method</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_groupBox">
+           <item>
+            <widget class="QRadioButton" name="radio_cross_corr">
+             <property name="text">
+              <string>Normalized Cross Correlation</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radio_cosine">
+             <property name="text">
+              <string>Cosine Similarity</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radio_dtw">
+             <property name="text">
+              <string>Dynamic Time Warping (DTW)</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Similarity Threshold (0.0-1.0):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="dsp_threshold">
+          <property name="editable">
+           <bool>true</bool>
+          </property>
           <item>
-           <widget class="QPushButton" name="btn_load_ref">
-            <property name="text">
-             <string>Load Reference signal</string>
-            </property>
-           </widget>
+           <property name="text">
+            <string>0.50</string>
+           </property>
           </item>
           <item>
-           <widget class="QLabel" name="lbl_ref_file">
-            <property name="text">
-             <string>Reference: Not loaded</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
+           <property name="text">
+            <string>0.60</string>
+           </property>
           </item>
           <item>
-           <widget class="QPushButton" name="btn_load_readings">
-            <property name="text">
-             <string>Load Readings Signal</string>
-            </property>
-           </widget>
+           <property name="text">
+            <string>0.70</string>
+           </property>
           </item>
           <item>
-           <widget class="QLabel" name="lbl_readings_file">
-            <property name="text">
-             <string>Readings: not loaded</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
+           <property name="text">
+            <string>0.80</string>
+           </property>
           </item>
           <item>
-           <widget class="QLabel" name="label">
-            <property name="text">
-             <string>Reference Column Name:</string>
-            </property>
-           </widget>
+           <property name="text">
+            <string>0.90</string>
+           </property>
           </item>
           <item>
-           <widget class="QLineEdit" name="txt_ref_col">
-            <property name="text">
-             <string>Reference</string>
-            </property>
-           </widget>
+           <property name="text">
+            <string>0.95</string>
+           </property>
           </item>
-          <item>
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>Readings Column Name:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="txt_readings_col">
-            <property name="text">
-             <string>Readings</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_3">
-            <property name="text">
-             <string>Time Column Name (Optional) :</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="txt_time_col">
-            <property name="text">
-             <string>Time</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_4">
-            <property name="text">
-             <string>Similarity Threshold (0.0-1.0) :</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QDoubleSpinBox" name="dsp_threshold">
-            <property name="maximum">
-             <double>1.000000000000000</double>
-            </property>
-            <property name="singleStep">
-             <double>0.050000000000000</double>
-            </property>
-            <property name="value">
-             <double>0.700000000000000</double>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="btn_analyze">
-            <property name="text">
-             <string>Analyze</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="lbl_status">
-            <property name="text">
-             <string>Status: Ready</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
-        </widget>
-       </widget>
-      </item>
-      <item>
-       <widget class="QWidget" name="plotsAreaWidget" native="true">
-        <widget class="QWidget" name="plot_widget_placeholder_raw" native="true">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>330</y>
-           <width>581</width>
-           <height>301</height>
-          </rect>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_7">
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_5"/>
-          </item>
-         </layout>
-        </widget>
-        <widget class="QWidget" name="plot_widget_placeholder_filtered" native="true">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>581</width>
-           <height>301</height>
-          </rect>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_8">
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_4"/>
-          </item>
-         </layout>
-        </widget>
-       </widget>
-      </item>
-     </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="chk_selective_zoom">
+          <property name="text">
+           <string>Enable Selective Area Zoom</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_analyze">
+          <property name="text">
+           <string>Run Analysis</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_export">
+          <property name="text">
+           <string>Export Results CSV</string>
+          </property>
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="plotsAreaWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_plots_area">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QSplitter" name="plotSplitter">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="handleWidth">
+           <number>3</number>
+          </property>
+          <widget class="QWidget" name="plot_widget_placeholder_raw">
+           <layout class="QVBoxLayout" name="verticalLayout_7"/>
+          </widget>
+          <widget class="QWidget" name="plot_widget_placeholder_filtered">
+           <layout class="QVBoxLayout" name="verticalLayout_8"/>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+    <widget class="QLabel" name="lbl_status">
+        <property name="text">
+            <string>Status: Ready</string>
+        </property>
     </widget>
-   </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>976</width>
-     <height>25</height>
-    </rect>
+  <action name="actionExport_Results_CSV">
+   <property name="text">
+    <string>Export Results CSV</string>
    </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  </action>
+  <action name="actionExport_Raw_Plot_Image">
+   <property name="text">
+    <string>Export Raw Plot Image</string>
+   </property>
+  </action>
+  <action name="actionExport_Filtered_Plot_Image">
+   <property name="text">
+    <string>Export Filtered Plot Image</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
